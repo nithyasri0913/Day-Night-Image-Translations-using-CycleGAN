@@ -1,18 +1,16 @@
 # Day-Night-Image-Translations-using-CycleGAN
 Day-Night Image Translations using CycleGAN
 
-<h1 style='color:lightgreen'> Introduction </h1>
+<h2 style='color:lightgreen'> Introduction </h2>
 
-This notebook uses Cycle GANs to trying to convert high resolution Day cityscapes images to Night images and vice versa. The dataset consists of high resolution Day and Night images. Cycle GANs allows us to use the dataset without any explicit image-target image pairs, by using cycle consistancy loss to ensure that the images retain the semantic and structural components. Hence Cycle GAN builds on top of Pix2Pix GANs, with an additional Cycle Consistency loss.
+    Paper: https://www.cs.cmu.edu/~junyanz/projects/CycleGAN/CycleGAN.pdf
 
-Paper: https://www.cs.cmu.edu/~junyanz/projects/CycleGAN/CycleGAN.pdf
+    Cycle GANs provide the approach to translate an image from source domain X to target domain Y in absence of paired examples. 
+    The goal is to learn a mapping G: X-> Y , and inverse mapping F: Y -> X , and introduce a cycle consistancy loss to enforce F(G(X)) = X and G(F(Y_hat)) = Y_hat.
 
+    The problem that Cycle GANs address can be classified as Image to Image translation. While there are other methods that address the problem with image-target pairs, obtaining these pairs is difficult and expensive. This method is applied for the tasks of style transfer, object transfiguration, and attribute transfer and claims to outperform baseline approaches.
+    <h1 style='color:lightgreen'>About Cycle GAN</h1>
 
-Cycle GANs provide the approach to translate an image from source domain X to target domain Y in absence of paired examples. 
-The goal is to learn a mapping G: X-> Y , and inverse mapping F: Y -> X , and introduce a cycle consistancy loss to enforce F(G(X)) = X and G(F(Y_hat)) = Y_hat.
-
-The problem that Cycle GANs address can be classified as Image to Image translation. While there are other methods that address the problem with image-target pairs, obtaining these pairs is difficult and expensive. This method is applied for the tasks of style transfer, object transfiguration, and attribute transfer and claims to outperform baseline approaches.
-<h1 style='color:lightgreen'>About Cycle GAN</h1>
 
     Paper Link : https://www.cs.cmu.edu/~junyanz/projects/CycleGAN/CycleGAN.pdf
 
@@ -70,6 +68,19 @@ The problem that Cycle GANs address can be classified as Image to Image translat
        c) Optimization : Used Adam optimizer with LR = 0.0002 for first 100 epoch, linealy decaying into 0 in next 100 epochs. (i.e total 200 epochs)
        d) Batch Size : 1 
        c) Training updates: Used history of training images for updating Dx and Dy, using a buffer that stores 50 previously generated images . This reduces model oscillations (from strivastava et al).
+       This notebook uses Cycle GANs to trying to convert high resolution Day cityscapes images to Night images and vice versa. The dataset consists of high resolution Day and Night images. Cycle GANs allows us to use the dataset without any explicit image-target image pairs, by using cycle consistancy loss to ensure that the images retain the semantic and structural components. Hence Cycle GAN builds on top of Pix2Pix GANs, with an additional Cycle Consistency loss.
+       
+<img width="814" alt="cyclegan1" src="https://github.com/user-attachments/assets/1b154145-fa24-4de0-b14c-2b06971c7c7a"> 
+Day -> Night
+<img width="654" alt="Screenshot 2024-11-18 at 3 16 43 AM" src="https://github.com/user-attachments/assets/77f4ec34-20c9-4c89-80e6-7c8cf0136cd5">
+Night -> Day
+<img width="651" alt="Screenshot 2024-11-18 at 3 17 58 AM" src="https://github.com/user-attachments/assets/ed5bf0d4-cb44-4f76-a095-b91fd8b8dad9">
+
+
+
+    
+<h2 style='color:lightgreen'>Sample Outputs</h2>
+
 
 
 
