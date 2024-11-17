@@ -1,5 +1,4 @@
 # Day-Night-Image-Translations-using-CycleGAN
-Day-Night Image Translations using CycleGAN
 
 <h2 style='color:lightgreen'> Introduction </h2>
 
