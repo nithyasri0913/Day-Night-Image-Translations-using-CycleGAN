@@ -69,17 +69,25 @@ Day-Night Image Translations using CycleGAN
        d) Batch Size : 1 
        c) Training updates: Used history of training images for updating Dx and Dy, using a buffer that stores 50 previously generated images . This reduces model oscillations (from strivastava et al).
        This notebook uses Cycle GANs to trying to convert high resolution Day cityscapes images to Night images and vice versa. The dataset consists of high resolution Day and Night images. Cycle GANs allows us to use the dataset without any explicit image-target image pairs, by using cycle consistancy loss to ensure that the images retain the semantic and structural components. Hence Cycle GAN builds on top of Pix2Pix GANs, with an additional Cycle Consistency loss.
-       
-<img width="814" alt="cyclegan1" src="https://github.com/user-attachments/assets/1b154145-fa24-4de0-b14c-2b06971c7c7a"> 
+
+<h2 style='color:lightgreen'>Sample Outputs</h2>
+
+
 Day -> Night
+
 <img width="654" alt="Screenshot 2024-11-18 at 3 16 43 AM" src="https://github.com/user-attachments/assets/77f4ec34-20c9-4c89-80e6-7c8cf0136cd5">
+
+
 Night -> Day
+
 <img width="651" alt="Screenshot 2024-11-18 at 3 17 58 AM" src="https://github.com/user-attachments/assets/ed5bf0d4-cb44-4f76-a095-b91fd8b8dad9">
 
 
+Day -> Night -> Day
+
+<img width="814" alt="cyclegan1" src="https://github.com/user-attachments/assets/1b154145-fa24-4de0-b14c-2b06971c7c7a"> 
 
     
-<h2 style='color:lightgreen'>Sample Outputs</h2>
 
 
 
